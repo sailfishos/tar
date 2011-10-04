@@ -1,0 +1,49 @@
+* Sun Jun 05 2011 Anas Nashif <anas.nashif@intel.com> - 1.17
+- Do not exclude files, just kill them
+- Split docs/locale
+
+* Fri Apr  8 2011 Yan Li <yan.i.li@intel.com> - 1.17
+- BMC#6647: CVE-2010-0624 Heap-based buffer overflow in the rmt_read__
+  function allows remote rmt servers to cause a denialof service
+  (memory corruption) or possibly execute arbitrary code
+  (BMC6647-CVE-2010-0624.patch)
+- BMC#6661: CVE-2007-4476 Buffer overflow in the safer_name_suffix to
+  cause DoS (BMC6661-CVE-2007-4476.patch)
+
+* Wed Dec 29 2010 Yan Li <yan.i.li@intel.com> - 1.17
+- Reverted to version 1.17 (BMC#11589)
+
+* Thu Mar 18 2010 Austin Zhang <austin.zhang@intel.com> - 1.23
+- Updated for CVE-2010-0624 fixing [MB#10239]
+
+* Sat Feb 27 2010 Anas Nashif <anas.nashif@intel.com> - 1.22
+- Updated with latest spectacle
+- Include YAML file in source rpm
+
+* Tue Jan 12 2010 Anas Nashif <anas.nashif@intel.com> - 1.22
+- Save 300K removing ChangeLog file
+
+* Thu Nov 05 2009 PeterZhu <peter.j.zhu@intel.com> - 1.22
+- Remove /usr/share/info/dir in %install
+
+* Mon Aug 10 2009 Anas Nashif <anas.nashif@intel.com> - 1.22
+- Added patches from fedora that fix the following:
+ * Fix restoring of directory default acls
+ * Do not patch generated autotools files
+ * Report record size only if the archive refers to a device
+ * Do not sigabrt with new gcc/glibc because of writing to
+  struct members of gnutar header at once via strcpy
+ * ignore errors from setting utime() for source file
+  on read-only filesystem 
+
+* Tue Apr 28 2009 Vivian Zhang <vivian.zhang@intel.com> 1.22
+- Update to 1.22
+- Drop upstreamed patch
+- Improve loneZeroWarning patch
+- Regenerate xattrs and xattrs-conf patches
+
+* Wed Dec 17 2008 Arjan van de Ven <arjan@linux.intel.com> 1.19
+- Use standard spec file
+
+* Fri Sep 12 2008 Yi Yang <yi.y.yang@intel.com> 1.19
+- Remove installation warnings of info files

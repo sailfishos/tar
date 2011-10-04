@@ -1,0 +1,19 @@
+<package project="Mer:Trunk:Base" name="tar">
+  <title>A GNU file archiving program</title>
+  <description>The GNU tar program saves many files together in one archive and can
+restore individual files (or all of the files) from that archive. Tar
+can also be used to add supplemental files to an archive and to update
+or list files in the archive. Tar includes multivolume support,
+automatic archive compression/decompression, the ability to perform
+remote archives, and the ability to perform incremental and full
+backups.
+
+If you want to use tar for remote backups, you also need to install
+the rmt package.
+
+
+
+
+</description>
+  <url>http://www.gnu.org/software/tar/</url>
+</package>
