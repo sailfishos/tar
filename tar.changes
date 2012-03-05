@@ -1,3 +1,7 @@
+* Mon Mar 05 2012 Marko Saukko <marko.saukko@gmail.com> - 1.1.7
+- Execute spectacle to drop info dependency MER#197
+- Removed Epoch as Mer doesn't need that.
+
 * Sun Jun 05 2011 Anas Nashif <anas.nashif@intel.com> - 1.17
 - Do not exclude files, just kill them
 - Split docs/locale
