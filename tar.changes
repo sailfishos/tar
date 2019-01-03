@@ -1,4 +1,7 @@
-* Mon Mar 05 2012 Marko Saukko <marko.saukko@gmail.com> - 1.1.7
+* Thu Jan 03 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 1.17-2
+- [packaging] Rename tar-docs to tar-doc. Contributes to JB#38578
+
+* Mon Mar 05 2012 Marko Saukko <marko.saukko@gmail.com> - 1.17
 - Execute spectacle to drop info dependency MER#197
 - Removed Epoch as Mer doesn't need that.
 
