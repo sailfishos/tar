@@ -1,7 +1,7 @@
 Name:       tar
 Summary:    A GNU file archiving program
 Version:    1.17
-Release:    2
+Release:    3
 Group:      Applications/Archiving
 License:    GPLv2+
 URL:        http://www.gnu.org/software/tar/
@@ -20,6 +20,7 @@ Patch9:     BMC6661-CVE-2007-4476.patch
 Patch10:    tar-aarch64.patch
 BuildRequires:  gettext
 BuildRequires:  libacl-devel
+Provides:   gnu-tar
 
 %description
 The GNU tar program saves many files together in one archive and can
