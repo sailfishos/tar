@@ -72,8 +72,7 @@ Man and info pages for %{name}.
 
 %build
 
-%configure --disable-static \
-    --bindir=/bin
+%configure --disable-static
 
 make %{?_smp_mflags}
 
@@ -92,7 +91,7 @@ install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
 
 %files -f tar.lang
 %defattr(-,root,root,-)
-/bin/tar
+%{_bindir}/tar
 %license COPYING
 
 %files doc
