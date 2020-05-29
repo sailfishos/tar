@@ -1,0 +1,42 @@
+From 491bf6cccd3af69a2669aca1a2d55925919d244d Mon Sep 17 00:00:00 2001
+From: rpm-build <rpm-build>
+Date: Mon, 28 Jul 2014 08:08:50 +0200
+Subject: [PATCH] Stop issuing lone zero block warnings (downstram)
+
+Resolves: #135601
+---
+ src/list.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/src/list.c b/src/list.c
+index 3678b29..19143a8 100644
+--- a/src/list.c
++++ b/src/list.c
+@@ -241,6 +241,14 @@ read_and (void (*do_something) (void))
+ 
+ 	  if (!ignore_zeros_option)
+ 	    {
++             /*
++              * According to POSIX tar specs, this is wrong, but on the web
++              * there are some tar specs that can trigger this, and some tar
++              * implementations create tars according to that spec.  For now,
++              * let's not be pedantic about issuing the warning.
++              */
++#if 0
++
+ 	      char buf[UINTMAX_STRSIZE_BOUND];
+ 
+ 	      status = read_header (&current_header, &current_stat_info,
+@@ -250,6 +258,9 @@ read_and (void (*do_something) (void))
+ 	      WARNOPT (WARN_ALONE_ZERO_BLOCK,
+ 		       (0, 0, _("A lone zero block at %s"),
+ 			STRINGIFY_BIGINT (current_block_ordinal (), buf)));
++#endif
++	      status = read_header (&current_header, &current_stat_info,
++	                            read_header_auto);
+ 	      break;
+ 	    }
+ 	  status = prev_status;
+-- 
+2.17.1
+
