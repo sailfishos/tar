@@ -1,4 +1,5 @@
-Name:           tar
+%define _name tar
+Name:           gnu-%{_name}
 Version:        1.32
 Release:        1
 Summary:        A GNU file archiving program
@@ -13,7 +14,8 @@ BuildRequires:  libacl-devel
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  bison
-Provides:       gnu-tar
+Provides:       %{_name} = 1.32+git2
+Obsoletes:      %{_name} < 1.32+git2
 
 %description
 The GNU tar program saves many files together in one archive and can
@@ -24,11 +26,8 @@ automatic archive compression/decompression, the ability to perform
 remote archives, and the ability to perform incremental and full
 backups.
 
-If you want to use tar for remote backups, you also need to install
-the rmt package.
-
 %prep
-%autosetup -p1 -n %{name}-%{version}/%{name}
+%autosetup -p1 -n %{name}-%{version}/tar
 
 %build
 sed -i 's/doc //' Makefile.am
