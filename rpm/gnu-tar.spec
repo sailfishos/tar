@@ -1,14 +1,15 @@
 %define _name tar
 Name:           gnu-%{_name}
-Version:        1.32
+Version:        1.35
 Release:        1
 Summary:        A GNU file archiving program
 License:        GPLv3+
 URL:            http://www.gnu.org/software/tar/
 Source:         %{name}-%{version}.tar.bz2
-Patch0:         tar-1.28-loneZeroWarning.patch
-Patch1:         tar-1.28-vfatTruncate.patch
-Patch2:         tar-1.29-wildcards.patch
+Patch0:         0001-Stop-issuing-lone-zero-block-warnings-downstram.patch
+Patch1:         0002-vfat-like-FS-sparse-still-downstream.patch
+Patch2:         0003-wildcard-defaults-downstram-compatibility.patch
+Patch3:         0004-Don-t-build-docs.patch
 BuildRequires:  gettext
 BuildRequires:  libacl-devel
 BuildRequires:  autoconf
@@ -30,10 +31,9 @@ backups.
 %autosetup -p1 -n %{name}-%{version}/tar
 
 %build
-sed -i 's/doc //' Makefile.am
 ./bootstrap --no-git --skip-po --gnulib-srcdir=gnulib
 export tar_cv_path_RSH=no
-%configure --bindir=%{_bindir}
+%configure --bindir=%{_bindir} --disable-year2038
 
 %install
 %make_install

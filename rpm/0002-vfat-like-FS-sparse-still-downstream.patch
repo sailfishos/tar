@@ -1,4 +1,4 @@
-From 9392a42b326f67035cd7ea754065fbe8ab81b269 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: rpm-build <rpm-build>
 Date: Mon, 28 Jul 2014 08:10:10 +0200
 Subject: [PATCH] vfat-like FS & sparse (still downstream)
@@ -16,10 +16,10 @@ http://lists.gnu.org/archive/html/bug-tar/2006-02/msg00000.html
  1 file changed, 18 insertions(+), 1 deletion(-)
 
 diff --git a/src/system.c b/src/system.c
-index f90e47d..151dab3 100644
+index 93fff885aca324352bb5b91372c8889974afdd32..e2feb5c973eae3e25781e69d5a34677091d3796e 100644
 --- a/src/system.c
 +++ b/src/system.c
-@@ -244,8 +244,25 @@ sys_compare_links (struct stat *link_data, struct stat *stat_data)
+@@ -273,8 +273,25 @@ sys_compare_links (struct stat *link_data, struct stat *stat_data)
  int
  sys_truncate (int fd)
  {
@@ -46,6 +46,3 @@ index f90e47d..151dab3 100644
  }
  
  /* Return nonzero if NAME is the name of a regular file, or if the file
--- 
-2.17.1
-
