@@ -1,4 +1,4 @@
-From 491bf6cccd3af69a2669aca1a2d55925919d244d Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: rpm-build <rpm-build>
 Date: Mon, 28 Jul 2014 08:08:50 +0200
 Subject: [PATCH] Stop issuing lone zero block warnings (downstram)
@@ -9,7 +9,7 @@ Resolves: #135601
  1 file changed, 11 insertions(+)
 
 diff --git a/src/list.c b/src/list.c
-index 3678b29..19143a8 100644
+index e9a68159a879f74d38850f2dfe7964405e1389e9..976521036d124719e51c95e91481c0cc5a7f1f02 100644
 --- a/src/list.c
 +++ b/src/list.c
 @@ -241,6 +241,14 @@ read_and (void (*do_something) (void))
@@ -37,6 +37,3 @@ index 3678b29..19143a8 100644
  	      break;
  	    }
  	  status = prev_status;
--- 
-2.17.1
-

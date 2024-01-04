@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Anton Thomasson <antonthomasson@gmail.com>
+Date: Tue, 2 Jan 2024 19:29:12 +0100
+Subject: [PATCH] Don't build docs
+
+---
+ Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index fc45b6a660d1c1e53af56806b08b1b460a68443c..91e716400d1bf1cd94faaafe6fe53f2181dafe21 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -19,7 +19,7 @@
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ EXTRA_DIST = ChangeLog.1 Make.rules
+-SUBDIRS = doc gnu lib rmt src scripts po tests
++SUBDIRS = gnu lib rmt src scripts po tests
+ 
+ dist-hook:
+ 	$(MAKE) changelog_dir=$(distdir) ChangeLog
